@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/yeray/Desktop/DESARROLLO/DemoArchAndroid/app/src/main/res/xml/network_security_config.xml" value="0.1625" />
+        <entry key="..\:/Users/yeray/Desktop/DESARROLLO/DemoArchAndroid/features/herolist/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.246875" />
+        <entry key="..\:/Users/yeray/Desktop/DESARROLLO/DemoArchAndroid/features/herolist/src/main/res/layout/activity_hero_list.xml" value="0.4" />
+        <entry key="..\:/Users/yeray/Desktop/DESARROLLO/DemoArchAndroid/features/herolist/src/main/res/layout/fragment_hero_detail.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/yeray/Desktop/DESARROLLO/DemoArchAndroid/features/herolist/src/main/res/layout/fragment_hero_list.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/yeray/Desktop/DESARROLLO/DemoArchAndroid/features/herolist/src/main/res/layout/fragment_list.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/yeray/Desktop/DESARROLLO/DemoArchAndroid/features/herolist/src/main/res/layout/list_item_hero.xml" value="0.4041666666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

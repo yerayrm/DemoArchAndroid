@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import
+            alias="HeroExtensions"
+            type="com.yerayrm.dm.heroes.model.HeroExtensionsKt" />
+        <variable
+            name="hero"
+            type="com.yerayrm.dm.heroes.model.Hero"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurface"
+        android:fitsSystemWindows="true"
+        tools:context=".views.HeroesActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_app_bar_height"
+            android:animateLayoutChanges="true"
+            android:background="?attr/colorSurface"
+            android:fitsSystemWindows="true"
+            android:stateListAnimator="@animator/toolbar_anim"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:collapsedTitleGravity="center"
+                app:collapsedTitleTextAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="?attr/colorSurface"
+                app:title="@{hero.name}"
+                app:titleEnabled="false"
+                app:toolbarId="@id/toolbar">
+
+                <ImageView
+                    android:id="@+id/detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/detail_app_bar_height"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{HeroExtensions.getThumbnailUrl(hero)}"
+                    app:layout_collapseMode="parallax" />
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin"
+                    app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                    app:titleTextColor="?attr/colorOnSurface" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/hero_detail_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_normal">
+
+                <TextView
+                    android:id="@+id/hero_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_horizontal"
+                    android:text="@{hero.name}"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Spiderman" />
+
+                <TextView
+                    android:id="@+id/hero_comics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_extra_big"
+                    app:drawableStartCompat="@drawable/ic_baseline_done_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hero_name"
+                    tools:text="Description 1"
+                    android:textSize="18sp"
+                    android:text="@{@string/number_of_comics(hero.comics.available)}"/>
+
+                <TextView
+                    android:id="@+id/hero_series"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    app:drawableStartCompat="@drawable/ic_baseline_done_24"
+                    app:layout_constraintStart_toStartOf="@id/hero_comics"
+                    app:layout_constraintTop_toBottomOf="@id/hero_comics"
+                    tools:text="Description 2"
+                    android:textSize="18sp"
+                    android:text="@{@string/number_of_series(hero.series.available)}" />
+
+                <TextView
+                    android:id="@+id/hero_stories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    app:drawableStartCompat="@drawable/ic_baseline_done_24"
+                    app:layout_constraintStart_toStartOf="@id/hero_comics"
+                    app:layout_constraintTop_toBottomOf="@id/hero_series"
+                    tools:text="Description 3"
+                    android:textSize="18sp"
+                    android:text="@{@string/number_of_stories(hero.stories.available)}" />
+
+                <TextView
+                    android:id="@+id/hero_events"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    app:drawableStartCompat="@drawable/ic_baseline_done_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/hero_comics"
+                    app:layout_constraintTop_toBottomOf="@id/hero_stories"
+                    tools:text="Description 4"
+                    android:textSize="18sp"
+                    android:text="@{@string/number_of_events(hero.events.available)}" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

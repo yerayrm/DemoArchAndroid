@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles "consumer-rules.pro"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    api project(':datamanagers:heroes')
+
+    implementation libs.bundles.kotlin
+    implementation libs.bundles.koin
+
+    implementation libs.view.constraintlayout
+    implementation libs.view.appcompat
+    implementation libs.view.material
+
+    implementation libs.support.appcompat
+
+    implementation libs.navigation.ui
+    implementation libs.navigation.fragment
+
+    kapt libs.glide.compiler
+    implementation libs.glide.core
+
+    testImplementation libs.bundles.unittesting
+}

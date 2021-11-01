@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Marvel Heroes</string>
+
+    <string name="number_of_comics">Aparece en %s cómics.</string>
+    <string name="number_of_series">Aparece en %s series.</string>
+    <string name="number_of_stories">Aparece en %s historias.</string>
+    <string name="number_of_events">Ha estado en %s eventos.</string>
+
+    <string name="error_getting_heroes">Ops! Parece que no hay ningún héroe disponible en estos momentos.</string>
+</resources>

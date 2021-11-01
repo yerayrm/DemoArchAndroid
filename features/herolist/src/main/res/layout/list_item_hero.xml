@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import
+            alias="HeroExtensions"
+            type="com.yerayrm.dm.heroes.model.HeroExtensionsKt" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="hero"
+            type="com.yerayrm.dm.heroes.model.Hero"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginStart="@dimen/card_side_margin"
+        android:layout_marginEnd="@dimen/card_side_margin"
+        android:layout_marginTop="@dimen/card_top_margin"
+        android:layout_marginBottom="@dimen/card_bottom_margin"
+        android:onClick="@{clickListener}"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/hero_item_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{HeroExtensions.getThumbnailUrl(hero)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hero_item_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@{hero.name}"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="#55000000"
+                android:padding="@dimen/margin_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Spiderman" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,54 @@
+[versions]
+kotlinstdlib = "1.5.21"
+kotlincore = "1.6.0"
+
+junit = "4.13.1"
+mockk = "1.10.0"
+coretest = "1.1.1"
+coroutinetest = "1.5.2"
+
+retrofit = "2.9.0"
+retrofitgson = "2.2.0"
+okhttp = "2.5.0"
+okhttplog = "3.11.0"
+koin = "2.1.6"
+constraintlayout = "2.0.2"
+appcompat = "1.2.0"
+material = "1.2.1"
+navigation = "2.3.3"
+coroutines = "1.4.3"
+glide = "4.10.0"
+supportappcompat = "23.2.0"
+
+[libraries]
+kotlin-stdlib = { module="org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref="kotlinstdlib" }
+kotlin-core = { module="androidx.core:core-ktx", version.ref="kotlincore" }
+
+junit = { module="junit:junit", version.ref="junit" }
+mockk = { module="io.mockk:mockk", version.ref="mockk" }
+coretesting = { module="android.arch.core:core-testing", version.ref="coretest" }
+coroutinetest = { module="org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref="coroutinetest" }
+
+retrofit = { module="com.squareup.retrofit2:retrofit", version.ref="retrofit" }
+gson = { module="com.squareup.retrofit2:converter-gson", version.ref="retrofitgson" }
+okhttp-base = { module="com.squareup.okhttp:okhttp", version.ref="okhttp" }
+okhttp-log = { module="com.squareup.okhttp3:logging-interceptor", version.ref="okhttplog" }
+koin-core = { module="org.koin:koin-core", version.ref="koin" }
+koin-viewmodel = { module="org.koin:koin-androidx-viewmodel", version.ref="koin" }
+view-constraintlayout = { module="androidx.constraintlayout:constraintlayout", version.ref="constraintlayout" }
+view-appcompat = { module="androidx.appcompat:appcompat", version.ref="appcompat" }
+view-material = { module="com.google.android.material:material", version.ref="material" }
+navigation-fragment = { module="androidx.navigation:navigation-fragment-ktx", version.ref="navigation" }
+navigation-ui = { module="androidx.navigation:navigation-ui-ktx", version.ref="navigation" }
+navigation-plugin = { module="androidx.navigation:navigation-safe-args-gradle-plugin", version.ref="navigation" }
+coroutines = { module="org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref="coroutines" }
+glide-compiler = { module="com.github.bumptech.glide:compiler", version.ref="glide"}
+glide-core = { module="com.github.bumptech.glide:glide", version.ref="glide"}
+support-appcompat = { module="com.android.support:appcompat-v7", version.ref="supportappcompat"}
+
+
+[bundles]
+kotlin = ["kotlin-stdlib", "kotlin-core"]
+unittesting = ["junit", "mockk", "coretesting", "coroutinetest"]
+api = ["retrofit", "gson", "okhttp-base", "okhttp-log"]
+koin = ["koin-core", "koin-viewmodel"]

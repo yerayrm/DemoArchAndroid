@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_heroes"
+    app:startDestination="@id/hero_list_fragment">
+
+    <fragment
+        android:id="@+id/hero_list_fragment"
+        android:name="com.yerayrm.feature.herolist.views.HeroListFragment"
+        tools:layout="@layout/fragment_hero_list">
+
+        <action
+            android:id="@+id/action_hero_list_to_hero_detail"
+            app:destination="@id/hero_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hero_detail_fragment"
+        android:name="com.yerayrm.feature.herolist.views.HeroDetailFragment"
+        tools:layout="@layout/fragment_hero_detail">
+
+        <argument
+            android:name="hero"
+            app:argType="com.yerayrm.dm.heroes.model.Hero" />
+    </fragment>
+
+</navigation>
